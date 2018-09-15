@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>WebScripts.biz</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" type="image/x-icon" href="../../img/faviconPuzzle.jpg">
+      <style>
+
+body{ 
+   margin: 0; padding: 0;
+}
+#pageWrapper {
+   max-width: 600px;
+   margin: auto;
+   font-family: serif;
+   padding-bottom: 10px;
+   color: #2B1A00;
+   padding: 4px;
+}
+h1,h2,#copy {
+   font-family: sans-serif;
+}
+#firstH1,#copy {
+   color: gray;
+   background: black;
+   margin: 0;
+   padding: 1em;
+}
+#secondH1 { 
+   text-align: center; 
+   color: #683E00;
+}
+h2 { 
+   color: #683E00;
+   margin: 50px auto 30px auto; 
+}
+.dlD { text-align: center; margin: 50px auto; }
+.btn {
+   display: block;
+   width: 270px; 
+   height: 40px;
+   padding-top: 20px;
+   margin: 10px auto;
+   text-decoration: none;
+   border: 1px solid blue;
+   border-radius: 5px;
+   font-size: 1.2em;
+   color: blue;
+   font-family: sans-serif;
+}
+.btn:hover { background: #ddf; }
+code {
+   font-size: 1.2em;
+   font-family: monospace;
+   margin-left: 20px;
+   padding-left: 10px;
+   border-left: 1px solid #2B1A00;
+}
+.pink { color: #FF00A2; }
+#copy {
+   font-size: 0.8em;
+   text-align: right;
+}
+#my_Scroll_top_btn {
+   display: block;
+   width: 100px;
+   height: 60px;
+   border: 1px solid blue;
+   border-radius: 5px;
+   font-size: 1.2em;
+   color: blue;
+   background: none;
+   font-family: sans-serif;
+   padding: 10px;
+
+}
+#my_Scroll_top_btn:hover {
+   background: #ddf;
+}
+
+      </style>
+   </head>
+   <body>
+      <h1 id="firstH1">JavaScript Plugin/Script</h1>
+      <div id="pageWrapper">
+	 <h1 id="secondH1">Scroll to Top <em>-smoothly</em></h1>
+
+	 <div class="dlD">
+	    <h2>Download:</h2>
+	    <a class="btn" href="Scroll_top.js">Scroll_top.js</a>
+	    <a class="btn" href="Scroll_top.min.js">Scroll_top.min.js</a>
+	 </div>
+
+	 <h2>Description</h2>
+	 <p>This script will scroll a page smoothly to the top at the click of button. A button that you will want to place near the bottom of the page. <p>
+	 <p>Scroll to the bottom of this page for the demo.</p>
+	 <p>This script works on all modern browsers including IE9 and above.</p>
+
+	 <h2>Usage</h2>
+	 <p>Include the <a href="Scroll_top.js">Scroll_top.js</a> script in your page. Set an id on the dom element you want to be your scroll to the top button. And pass that id to the setupScroll_top() function.</p>
+	 <p>For example, if in your html you have a button element with an id as follows:</p>
+	 <code>&lt;button id=<span class="pink">"my_Scroll_top_btn"</span>&gt;</code>
+	 <p>Then in your JavaScript you would pass that id as string to the setupScroll_top() function as follows:</p>
+	 <code>
+	    setupScroll_top(<span class="pink">"my_Scroll_top_btn"</span>);
+	 </code>
+
+	 <h2>Further Notes</h2>
+	 <h3>Dependencies</h3>
+	 <p>This Scroll_top.js script uses another script <a href="../timer">T{}</a> which is included at the top of the <a href="Scroll_top.js">Scroll_top.js</a> and <a href="Scroll_top.min.js">Scroll_top.min.js</a> files. </p>
+	 <p>You should not include <a href="../timer">T{}</a> more than once. If you are already using <a href="../timer">T{}</a> for any other scripts, then delete it from all scripts and paste in once. Also, make sure to paste it at the top, before all scripts that use it. When deleting look for the line "var T=new function(){...". at the top of the file. For example, in this here <a href="Scroll_top.js">Scroll_top.js</a> file, you will see "var T=new function(){..." at the top. That is the line you will want to delete. It is a long line of minified code by the way.</p> 
+	 <h3>Best Practice</h3>
+	 <p>Scroll_top.js &amp; Scroll_top.min.js download links are of a small file size. The code is just a few lines. And so to reduce the number of file gets() your web page requires, I would advise you to just copy-paste the code in with the rest of your JavaScript.</p>
+	 <h3>Scroll Speed</h3>
+	 <p>The scroll speed is hard coded. It is set to 175. That is the number of px the scroll position is decremented per jump until it reaches less than zero and you are at the top of the page.  If you wanted to change the speed simply find the variable "decrement" and change the 175 value it assigned. I must warn you, you might end up wasting a lot of time watching the page scrolling a little faster or slower. I certainly did. I think 175px is a good enough speed for long and extra long pages.</p>
+	 <h3>Minification</h3>
+	 <p>The minified script was minified using the <a href="https://closure-compiler.appspot.com">closure compiler</a> with the "Optimization:" level set to (O)Whitespace only and all options for formatting unchecked, which is the defaults config.</p>
+	 <h3>github</h3>
+	 <p>This page and all it contents are also posted at the following github link: <a href="https://github.com/nadeemelahi/scroll_top">github.com/nadeemelahi/scroll_top</a>.<p>
+
+	 <h2>License</h2>
+	 <p>This Scroll to Top plugin is licensed under gpl v2. Free for business or personal use. Not for re-sale. Please release modified or improved versions under gpl v2 license too.</p>
+
+	 <h2>DEMO</h2>
+	 <p>Click the button below and notice the automatic smooth scrolling to the top of the page.</p>
+	 <div id="demoBtnWrap">
+	    <button id="my_Scroll_top_btn">scroll &uarr;</button>
+	 </div>
+	       
+
+
+	 <div class="dlD">
+	    <h2>Download: <br>
+	       (same as top of page)</h2>
+	    <p><a class="btn" href="Scroll_top.js">Scroll_top.js</a></p>
+	    <p><a class="btn" href="Scroll_top.min.js">Scroll_top.min.js</a></p>
+	 </div>
+
+      </div>
+
+      <p id="copy">Copyright 2018 &copy; nadeem.elahi@gmail.com</p>
+
+      <script type="text/javascript" src="Scroll_top.min.js"></script>
+
+      <script type="text/javascript">
+
+setupScroll_top("my_Scroll_top_btn");
+
+      </script>
+
+   </body>
+</html>
